@@ -1,0 +1,153 @@
+nav {
+  display: flex;
+  justify-content: center;
+	border-bottom: #D3D3D3 1px solid;
+  height: 60px;
+}
+nav h1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: Center;
+  width:100%;
+  font-size: 36px;
+}
+nav label{
+  display: flex;
+  width: 15%;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  font-size: large;
+  background-color: white;
+  border: none;
+}
+nav label:hover{
+  background-color: grey;
+}
+.dark-mode{
+  background-color: black;
+  color: white;
+}
+#hint{
+  background-color: orange;
+  color: black;
+  text-align: center;
+  position: relative;
+  top: 50px;
+  display: none;
+  padding: 12px;
+}
+body {
+  margin: 0;
+}
+#table{
+  width: 340px;
+  height: 340px;
+  margin: 0 auto;
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.wordbox{
+  border: 2px solid;
+  width: 70px;
+  height: 70px;
+  margin: 2px;
+
+  font-size: 36px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.split{
+	display: flex;
+	flex-direction: row;
+}
+#right ul{
+	margin: 0;
+	padding: 0;
+	list-style: circle;
+}
+#right li{
+	height: 30px;
+	margin-left: 10px;
+}
+#left{
+	flex: 1;
+	padding: 1rem;  
+	text-align: center;
+}	
+#right{
+	flex: 1;
+	padding: 1rem;
+	position: relative;
+  border-left: #D3D3D3 1px solid;
+  display: none;
+}
+#hidden{
+  display: none;
+}
+.correct{
+  background-color: #6aaa6a;
+  color:white;
+  border-color: white;
+}
+.involved{
+  background-color: #c9b458;
+  color: white;
+  border-color:white;
+}
+.wrong{
+  background-color: #787c7e;
+  color:white;
+  border-color:white;
+}
+#winner{
+  display: none;
+  margin-left: auto;
+  margin-right: auto;
+  width: 28%;
+}
+#start{
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  top: 20px;
+}
+#lost{
+  background-color: red;
+  color: white;
+  text-align: center;
+  position: relative;
+  top: 50px;
+  padding: 13px;
+  display: none;
+}
+#won{
+  background-color: grey;
+  color: black;
+  text-align: center;
+  position: relative;
+  top: 50px;
+  padding: 13px;
+  display: none;
+}
+footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  border-top:  #D3D3D3 1px solid;
+  padding-top: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}

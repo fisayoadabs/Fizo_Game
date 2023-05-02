@@ -9,5 +9,5 @@ To get started with the game, simply open the index.html file in a web browser.
 HTML
 CSS
 JavaScript
-Authors
+# Authors
 Oluwafisayo Adabs - fisayoadabs

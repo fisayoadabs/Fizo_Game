@@ -6,8 +6,8 @@ This repository contains the `HTML`, `CSS`, and `JavaScript` code for a word gam
 To get started with the game, simply open the index.html file in a web browser.
 
 # Built With
-HTML
-CSS
-JavaScript
+`HTML`
+`CSS`
+`JavaScript`
 # Author
 Oluwafisayo Adabs - fisayoadabs

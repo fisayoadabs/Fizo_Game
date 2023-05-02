@@ -10,4 +10,4 @@ HTML
 CSS
 JavaScript
 Authors
-Fizzy - Github Profile
+Oluwafisayo Adabs - fisayoadabs

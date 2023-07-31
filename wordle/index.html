@@ -1,41 +1,61 @@
 <!DOCTYPE html>
 <html lang="en-US">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Wordle</title>
-    <link rel="stylesheet" href="./style.css" />
-    <script src="./wordle.js"></script>
-  </head>
-  <nav>
-    <h1>Wordle</h1>
-    <label id="dark" onclick="mode()">&#9681</label>
-    <label id="question" onclick="hint()">&#63</label>
-    <label id="exclaim" onclick="hide()">&#9432</label>
-  </nav>
-  <body>
-    <div class= "split">
-      <div id="left">
-        <div id="table"></div>
-        <img src="https://res.cloudinary.com/mkf/image/upload/v1675467141/ENSF-381/labs/congrats_fkscna.gif" id="winner">
-        <label id="start" onclick="window.location.reload()">Start Over</label>
-      </div>
-      <div id="right">
-        <h2>How To Play</h2>
-        <ul>
-          <li>Start typing. The letters will appear in the boxes</li>
-          <li>Remove letters with Backspace</li>
-          <li>Hit Enter/Return to submit an answer</li>
-          <li>Letters with green background are in the right spot</li>
-          <li>Letters with yellow background exist in the word, but are in the wrong spots</li>
-          <li>Letters with grey background do not exist in th word</li>
-          <li>If you need a hit, click the  ? icon</li>
-        </ul>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Wordle</title>
+  <link rel="stylesheet" href="./style.css" />
+  <script src="./wordle.js"></script>
+</head>
+
+<body>
+  <header>
+    <div id="shuffle-container">
+      <label id="shuffle">&#9776</label>
+      <div id="shuffle-options">
+        <label id="four">4-Letter</label>
+        <label id="five">5-Letter</label>
+        <label id="six">6-Letter</label>
+        <label id="random">Random</label>
       </div>
     </div>
+    <h1 id="word">Wordle</h1>
+    <div id="icons">
+      <label id="dark">&#9681</label>
+      <label id="question">&#63</label>
+      <label id="exclaim">&#9432</label>
+    </div>
+  </header>
+
+  <div class="split">
+    <div id="left">
+      <div id="table"></div>
+      <img src="https://media.tenor.com/4NWj_bMKm9QAAAAM/tyler-hynes-falling-for-you.gif" id="winner">
+      <img
+        src="https://media1.giphy.com/media/xTiIzFfQlzj8caUOGI/giphy.gif?cid=6c09b952bc9182c64a7b6db2a9fc6d5fffa9d9d3ee936819&ep=v1_internal_gifs_gifId&rid=giphy.gif&ct=g"
+        id="loser">
+      <label id="start">Start Over</label>
       <div id="lost"></div>
       <div id="won"></div>
       <div id="hint"></div>
-    <footer> &#169; Fizzy</footer>
-  </body>
+      <div id="keyboard"></div>
+    </div>
+    <div id="right">
+      <h2>How To Play</h2>
+      <ul>
+        <li>Start typing. The letters will appear in the boxes</li>
+        <li>Remove letters with Backspace</li>
+        <li>Hit Enter/Return to submit an answer</li>
+        <li>Letters with green background are in the right spot</li>
+        <li>Letters with yellow background exist in the word, but are in the wrong spots</li>
+        <li>Letters with grey background do not exist in the word</li>
+        <li>If you need a hint, click the ? icon</li>
+        <li>Click the menu button on the top left side to decide the mode you want(Coming Soon)</li>
+      </ul>
+    </div>
+  </div>
+  <footer> &#169; fiztech</footer>
+</body>
+
 </html>

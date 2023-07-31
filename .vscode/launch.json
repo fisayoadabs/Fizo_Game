@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "type": "chrome",
+            "name": "http://file:///C:/Users/Fisayo/Desktop/Professional%20Github/Wordle/Wordle_Game/wordle/index.html",
+            "request": "launch",
+            "url": "http://file:///C:/Users/Fisayo/Desktop/Professional%20Github/Wordle/Wordle_Game/wordle/index.html"
+        }
+    ]
+}

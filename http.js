@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const port = process.env.PORT || 4000;
 
 const app = express();
 const corsOptions = {
@@ -185,6 +186,6 @@ app.get('/wordle/api', (req, res) => {
   res.json(dictionary);
 });
 
-app.listen(4000, () => {
-  console.log('Listening on port 4000...');
+app.listen(port, () => {
+  console.log(`Listening on port ${port}...`);
 });

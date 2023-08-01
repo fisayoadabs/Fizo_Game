@@ -21,27 +21,14 @@ var div;
 
 var keybox;
 
+const correctLetters = [];
+const semiCorrectLetters = [];
+const incorrectLetters = [];
+
 const four = document.getElementById("four");
 const five = document.getElementById("five");
 const six = document.getElementById("six");
 const random = document.getElementById("random");
-
-//     const res = await fetch("https://api.masoudkf.com/v1/wordle", {
-//     headers: {
-//     "x-api-key": "sw0Tr2othT1AyTQtNDUE06LqMckbTiKWaVYhuirv",
-//     },
-// });
-// let dict = await res.json();
-// let { dictionary } = dict;
-// randNum = dictionary[Number.parseInt(Math.random() * dictionary.length)];
-// grabWord = randNum.word.toUpperCase();
-// grabHint = randNum.hint;
-
-// var the_word = grabWord;
-// the_hint = grabHint;
-
-// console.log(the_word);
-// console.log(the_hint);
 
 window.onload = async () => {
 	initializeDict();
@@ -91,7 +78,6 @@ window.onload = async () => {
 				window.alert("first complete the word");
 			} else {
 				checker();
-				keyBoardChecker();
 				row_on++;
 				col_on = 0;
 			}
@@ -201,6 +187,9 @@ window.onload = async () => {
 				box_on.classList.add("correct");
 				correct += 1;
 				counter[value] -= 1;
+				if (!correctLetters.includes(value)) {
+					correctLetters.push(value);
+				}
 			}
 
 			if (correct == col) {
@@ -222,16 +211,38 @@ window.onload = async () => {
 				if (the_word.includes(value) && counter[value] > 0) {
 					box_on.classList.add("involved");
 					counter[value] -= 1;
+					if (!semiCorrectLetters.includes(value)) {
+						semiCorrectLetters.push(value);
+					}
 				} else {
 					box_on.classList.add("wrong");
+					if (!incorrectLetters.includes(value)) {
+						incorrectLetters.push(value);
+					}
 				}
 			}
 		}
+		keyBoardChecker();
 	};
 
-	const keyBoardChecker = () => {
-		//In progress
-	};
+	function keyBoardChecker() {
+		console.log(correctLetters);
+		const keyboardLetters = document.querySelectorAll(".keybox");
+
+		keyboardLetters.forEach((letterBox) => {
+			const letter = letterBox.innerText;
+
+			if (correctLetters.includes(letter)) {
+				letterBox.classList.remove("wrong");
+				letterBox.classList.remove("involved");
+				letterBox.classList.add("correct");
+			} else if (incorrectLetters.includes(letter)) {
+				letterBox.classList.add("wrong");
+			} else if (semiCorrectLetters.includes(letter)) {
+				letterBox.classList.add("involved");
+			}
+		});
+	}
 
 	const toggleHighlight = (el, show) => {
 		if (el != null) {
@@ -243,10 +254,6 @@ window.onload = async () => {
 				el.classList.remove("highlight");
 			}
 		}
-	};
-
-	const menu = () => {
-		//In progress
 	};
 
 	function mode() {

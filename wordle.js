@@ -18,6 +18,7 @@ var board;
 var post;
 var show;
 var div;
+var rect;
 
 var keybox;
 
@@ -346,7 +347,7 @@ window.onload = async () => {
 	}
 
 	function option_list(){
-		let rect = document.getElementById("shuffle-options");
+		rect = document.getElementById("shuffle-options");
 
 		if(rect.style.display == "block"){
 			rect.style.display = "none";
@@ -371,6 +372,9 @@ window.onload = async () => {
 		}
 		if (div) {
 			div.style.display = "none";
+		}
+		if(rect){
+			rect.style.display = "none";
 		}
 		correctLetters.length = 0;
 		semiCorrectLetters.length = 0;

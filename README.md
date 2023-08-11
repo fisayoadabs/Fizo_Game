@@ -21,7 +21,7 @@ To get started with the game, simply open the index.html file in a web browser.
 ## Date Completed
 - February 2023
 
-  ## Updated with
+## Updated with
 `Terraform`
 `AWS`
 - Using an AWS S3 bucket and terraform command I was able to create my own personal API.

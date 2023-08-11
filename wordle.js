@@ -369,9 +369,6 @@ window.onload = async () => {
 		if (show) {
 			show.style.display = "none";
 		}
-		if (div) {
-			div.style.display = "none";
-		}
 		if (rect) {
 			rect.style.display = "none";
 		}
@@ -379,6 +376,7 @@ window.onload = async () => {
 		semiCorrectLetters.length = 0;
 		incorrectLetters.length = 0;
 
+		document.getElementById("hint").style.display = "none";
 		document.getElementById("table").innerHTML = "";
 		document.getElementById("keyboard").innerHTML = "";
 

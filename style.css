@@ -47,9 +47,6 @@ header label:hover {
 	box-shadow: 0 4px 6px 5px #ccc;
 	width: 200%;
 }
-/* #shuffle-container:hover #shuffle-options {
-	display: block;
-} */
 #dark,
 #question,
 #exclaim {

@@ -152,8 +152,8 @@ window.onload = async () => {
 	}
 
 	const begin = () => {
-		console.log(the_word);
-		console.log(the_hint);
+		// console.log(the_word);
+		// console.log(the_hint);
 
 		box_on = document.getElementById(
 			row_on.toString() + "-" + col_on.toString()

@@ -75,6 +75,10 @@ header label:hover {
 	background-color: black;
 	color: white;
 }
+.dark-mode #start{
+	background-color: white;
+	color: black;
+}
 #hint {
 	background-color: orange;
 	color: black;
@@ -130,6 +134,9 @@ body {
 	display: inline-block;
 	justify-content: center;
 	align-items: center;
+}
+.keybox:nth-child(27) {
+	background-color: rgb(0, 253, 0);
 }
 .split {
 	display: flex;
@@ -199,7 +206,7 @@ body {
 	color: white;
 }
 #start {
-	background-color: green;
+	background-color: black;
 	color: white;
 	border: none;
 	padding: 10px 20px;

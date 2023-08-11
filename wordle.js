@@ -345,6 +345,16 @@ window.onload = async () => {
 		}
 	}
 
+	function option_list(){
+		let rect = document.getElementById("shuffle-options");
+
+		if(rect.style.display == "block"){
+			rect.style.display = "none";
+		}
+		else{
+			rect.style.display = "block";
+		}
+	}
 	async function restartGame() {
 		col_on = 0;
 		row_on = 0;
@@ -376,12 +386,15 @@ window.onload = async () => {
 
 		await initializeDict();
 	}
-
+	const menu = document.getElementById("shuffle-container")
 	const dark = document.getElementById("dark");
 	const help = document.getElementById("question");
 	const instruct = document.getElementById("exclaim");
 	const reStart = document.getElementById("start");
 
+	menu.addEventListener("click", () => {
+		option_list();
+	})
 	dark.addEventListener("click", () => {
 		mode();
 	});

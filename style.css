@@ -75,9 +75,13 @@ header label:hover {
 	background-color: black;
 	color: white;
 }
-.dark-mode #start{
+.dark-mode #start {
 	background-color: white;
 	color: black;
+}
+.dark-mode #shuffle-options {
+	background-color: black;
+	border: 1px solid #d3d3d3;
 }
 #hint {
 	background-color: orange;

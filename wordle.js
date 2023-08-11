@@ -346,13 +346,12 @@ window.onload = async () => {
 		}
 	}
 
-	function option_list(){
+	function option_list() {
 		rect = document.getElementById("shuffle-options");
 
-		if(rect.style.display == "block"){
+		if (rect.style.display == "block") {
 			rect.style.display = "none";
-		}
-		else{
+		} else {
 			rect.style.display = "block";
 		}
 	}
@@ -373,7 +372,7 @@ window.onload = async () => {
 		if (div) {
 			div.style.display = "none";
 		}
-		if(rect){
+		if (rect) {
 			rect.style.display = "none";
 		}
 		correctLetters.length = 0;
@@ -390,7 +389,7 @@ window.onload = async () => {
 
 		await initializeDict();
 	}
-	const menu = document.getElementById("shuffle-container")
+	const menu = document.getElementById("shuffle-container");
 	const dark = document.getElementById("dark");
 	const help = document.getElementById("question");
 	const instruct = document.getElementById("exclaim");
@@ -398,7 +397,7 @@ window.onload = async () => {
 
 	menu.addEventListener("click", () => {
 		option_list();
-	})
+	});
 	dark.addEventListener("click", () => {
 		mode();
 	});

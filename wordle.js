@@ -34,7 +34,9 @@ window.onload = async () => {
 	initializeDict();
 
 	async function initializeDict() {
-		response = await fetch("http://localhost:4000/wordle/api");
+		response = await fetch(
+			"https://y7fww66thpkp6bg526ujibkxgi0jefac.lambda-url.ca-central-1.on.aws"
+		);
 		dictionary = await response.json();
 
 		if (dictionary && dictionary.length > 0) {
@@ -80,6 +82,9 @@ window.onload = async () => {
 				checker();
 				row_on++;
 				col_on = 0;
+				box_on = document.getElementById(
+					row_on.toString() + "-" + col_on.toString()
+				);
 			}
 		}
 
@@ -226,7 +231,6 @@ window.onload = async () => {
 	};
 
 	function keyBoardChecker() {
-		console.log(correctLetters);
 		const keyboardLetters = document.querySelectorAll(".keybox");
 
 		keyboardLetters.forEach((letterBox) => {
@@ -358,6 +362,9 @@ window.onload = async () => {
 		if (div) {
 			div.style.display = "none";
 		}
+		correctLetters.length = 0;
+		semiCorrectLetters.length = 0;
+		incorrectLetters.length = 0;
 
 		document.getElementById("table").innerHTML = "";
 		document.getElementById("keyboard").innerHTML = "";

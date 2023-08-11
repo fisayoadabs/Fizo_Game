@@ -81,13 +81,16 @@ header label:hover {
 	text-align: center;
 	position: relative;
 	top: 50px;
-	display: none;
 	padding: 12px;
+	display: none;
+	margin: 0 auto;
+	width: 200px;
+	border-radius: 10px;
 }
 body {
 	margin: 0;
 }
-#table{
+#table {
 	width: 340px;
 	height: 340px;
 	margin: 0 auto;
@@ -176,17 +179,24 @@ body {
 .delight {
 	border: 2px solid;
 }
-#winner {
-	display: none;
-	margin-left: auto;
-	margin-right: auto;
-	width: 50%;
-}
+#winner,
 #loser {
 	display: none;
-	margin-left: auto;
-	margin-right: auto;
-	width: 65%;
+	margin: 0 auto;
+	width: 60%;
+	text-align: center;
+	padding: 10px;
+	border-radius: 10px;
+}
+#winner {
+	background-color: #6aaa6a;
+	color: white;
+	margin-top: 20px;
+}
+
+#loser {
+	background-color: #787c7e;
+	color: white;
 }
 #start {
 	background-color: green;
@@ -199,22 +209,27 @@ body {
 	position: relative;
 	top: 20px;
 }
+
+#lost,
+#won {
+	text-align: center;
+	position: relative;
+	top: 50px;
+	padding: 13px;
+	margin: 0 auto;
+	width: 200px;
+	border-radius: 10px;
+}
+
 #lost {
 	background-color: red;
 	color: white;
-	text-align: center;
-	position: relative;
-	top: 50px;
-	padding: 13px;
 	display: none;
 }
+
 #won {
 	background-color: grey;
 	color: black;
-	text-align: center;
-	position: relative;
-	top: 50px;
-	padding: 13px;
 	display: none;
 }
 footer {

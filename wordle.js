@@ -1,15 +1,17 @@
-var col = 4;
-var row = 4;
+var col;
+var row;
 
 var col_on = 0;
 var row_on = 0;
 
 var end = false;
-var the_word;
-var the_hint;
+var randNum;
+var grabWord;
+var grabHint;
 
 var response;
 var dictionary;
+var urlLink = "https://o3bg27pv7q5kiqv62d53ff74ne0vitar.lambda-url.ca-central-1.on.aws";
 
 let flashingInterval;
 var box_on;
@@ -26,29 +28,23 @@ const correctLetters = [];
 const semiCorrectLetters = [];
 const incorrectLetters = [];
 
-const four = document.getElementById("four");
-const five = document.getElementById("five");
-const six = document.getElementById("six");
-const random = document.getElementById("random");
 
 window.onload = async () => {
 	initializeDict();
 
 	async function initializeDict() {
+		//Grabs the dictionary from the url link and chooses the word
 		response = await fetch(
-			"https://y7fww66thpkp6bg526ujibkxgi0jefac.lambda-url.ca-central-1.on.aws"
+			urlLink
 		);
 		dictionary = await response.json();
 
 		if (dictionary && dictionary.length > 0) {
-			const randNum =
-				dictionary[Math.floor(Math.random() * dictionary.length)];
-			const grabWord = randNum.word.toUpperCase();
-			const grabHint = randNum.hint;
-
-			the_word = grabWord;
-			the_hint = grabHint;
-
+			randNum = dictionary[Math.floor(Math.random() * dictionary.length)];
+			grabWord = randNum.word.toUpperCase();
+			grabHint = randNum.hint;
+			col = grabWord.length;
+			row = grabWord.length;
 			gridBox();
 			keyboardBox();
 			begin();
@@ -56,6 +52,7 @@ window.onload = async () => {
 	}
 
 	function handleWriting(arg) {
+		//Function that takes a singular argument to allow typing in the boxes and keep tracks of wordbox rows and columns
 		clearInterval(flashingInterval);
 		toggleHighlight(box_on, false);
 		if (/^[A-Z]$/.test(arg)) {
@@ -92,7 +89,7 @@ window.onload = async () => {
 		if (!end && row_on == row) {
 			end = true;
 			document.getElementById("lost").innerHTML =
-				"You missed the word " + the_word.bold() + " and lost!";
+				"You missed the word " + grabWord.bold() + " and lost!";
 			reveal_loss();
 			loser_post();
 		}
@@ -103,6 +100,7 @@ window.onload = async () => {
 	}
 
 	function handleClick(event) {
+		//Function that deals with the keyboard based on letters clicked
 		const keyLetter = event.target;
 		if (keyLetter.classList.contains("keybox")) {
 			const letter = keyLetter.innerText;
@@ -112,6 +110,7 @@ window.onload = async () => {
 	}
 
 	const keyboardBox = () => {
+		//Creates the Keyboard
 		const alpha = Array.from(Array(26)).map((e, i) => i + 65);
 		const alphabet = alpha.map((x) => String.fromCharCode(x));
 		alphabet.push("ENTER");
@@ -134,6 +133,10 @@ window.onload = async () => {
 	};
 
 	const gridBox = () => {
+		//creates the wordle grid
+    document.getElementById("table").style.gridTemplateColumns = `repeat(${col}, 1fr)`;
+    document.getElementById("table").style.gridTemplateRows = `repeat(${row}, 1fr)`;
+
 		for (let i = 0; i < row; i++) {
 			for (let j = 0; j < col; j++) {
 				let wordbox = document.createElement("span");
@@ -146,14 +149,14 @@ window.onload = async () => {
 	};
 
 	function handleKeydown(e) {
+		//Function that deals with the typing on a computer/laptop(physical keyboard)
 		if (end) return;
 
 		handleWriting(e.key.toUpperCase());
 	}
 
 	const begin = () => {
-		// console.log(the_word);
-		// console.log(the_hint);
+		// Function that sets the first boxs and deals with the keydown function
 
 		box_on = document.getElementById(
 			row_on.toString() + "-" + col_on.toString()
@@ -163,6 +166,7 @@ window.onload = async () => {
 	};
 
 	const startFlashing = (el) => {
+		// Function that handles the active box on the grid
 		let flashing = false;
 
 		return setInterval(() => {
@@ -172,10 +176,11 @@ window.onload = async () => {
 	};
 
 	const checker = () => {
+		// Function that checks if the word entered is correct
 		let correct = 0;
 		let counter = {};
-		for (let i = 0; i < the_word.length; i++) {
-			let value = the_word[i];
+		for (let i = 0; i < grabWord.length; i++) {
+			let value = grabWord[i];
 			if (counter[value]) {
 				counter[value] += 1;
 			} else {
@@ -189,7 +194,7 @@ window.onload = async () => {
 			);
 			let value = box_on.innerText;
 
-			if (the_word[i] == value) {
+			if (grabWord[i] == value) {
 				box_on.classList.add("correct");
 				correct += 1;
 				counter[value] -= 1;
@@ -201,7 +206,7 @@ window.onload = async () => {
 			if (correct == col) {
 				end = true;
 				document.getElementById("won").innerHTML =
-					"You guessed the word " + the_word.bold() + " correctly!";
+					"You guessed the word " + grabWord.bold() + " correctly!";
 				reveal_won();
 				winner_post();
 			}
@@ -214,7 +219,7 @@ window.onload = async () => {
 			let value = box_on.innerText;
 
 			if (!box_on.classList.contains("correct")) {
-				if (the_word.includes(value) && counter[value] > 0) {
+				if (grabWord.includes(value) && counter[value] > 0) {
 					box_on.classList.add("involved");
 					counter[value] -= 1;
 					if (!semiCorrectLetters.includes(value)) {
@@ -232,6 +237,7 @@ window.onload = async () => {
 	};
 
 	function keyBoardChecker() {
+		// Function that updated the virtual keyboard based on the checker function
 		const keyboardLetters = document.querySelectorAll(".keybox");
 
 		keyboardLetters.forEach((letterBox) => {
@@ -250,6 +256,7 @@ window.onload = async () => {
 	}
 
 	const toggleHighlight = (el, show) => {
+		//Function that adds the highlight colour to the active box and also removes it
 		if (el != null) {
 			if (show) {
 				el.classList.add("highlight");
@@ -271,7 +278,7 @@ window.onload = async () => {
 		//Displays the hint
 		var hint_word = "Hint";
 		document.getElementById("hint").innerHTML =
-			hint_word.italics() + ": " + the_hint;
+			hint_word.italics() + ": " + grabHint;
 		var div = document.getElementById("hint");
 
 		if (div.style.display == "block") {
@@ -347,6 +354,7 @@ window.onload = async () => {
 	}
 
 	function option_list() {
+		// Function that shows the option-list 
 		rect = document.getElementById("shuffle-options");
 
 		if (rect.style.display == "block") {
@@ -355,13 +363,14 @@ window.onload = async () => {
 			rect.style.display = "block";
 		}
 	}
-	async function restartGame() {
+	function removal(){
+		// Function that resets all the variables 
 		col_on = 0;
 		row_on = 0;
 		end = false;
 
 		if (board) {
-			board.style.display = "flex";
+			board.style.display = "grid";
 		}
 		if (post) {
 			post.style.display = "none";
@@ -384,14 +393,21 @@ window.onload = async () => {
 		document
 			.getElementById("keyboard")
 			.removeEventListener("click", handleClick);
-
-		await initializeDict();
 	}
+	async function restartGame() {
+		// Function that restarts the game
+		let selectedLink = urlLink;
+		removal();
+		urlLink = selectedLink;
+    	await initializeDict();
+	}
+
 	const menu = document.getElementById("shuffle-container");
 	const dark = document.getElementById("dark");
 	const help = document.getElementById("question");
 	const instruct = document.getElementById("exclaim");
 	const reStart = document.getElementById("start");
+	const menu_choice = document.getElementById('shuffle-options');
 
 	menu.addEventListener("click", () => {
 		option_list();
@@ -408,5 +424,27 @@ window.onload = async () => {
 
 	reStart.addEventListener("click", () => {
 		restartGame();
+	});
+
+	menu_choice.addEventListener('click', (event) => {
+		if (event.target.tagName === 'LABEL') {
+			const option = event.target.id;
+			switch (option) {
+				case 'four':
+					urlLink = "https://o3bg27pv7q5kiqv62d53ff74ne0vitar.lambda-url.ca-central-1.on.aws";
+					break;
+				case 'five':
+					urlLink = "https://ms4wwf4ic4qbgwijmtbmhp34ia0ygcwa.lambda-url.ca-central-1.on.aws";
+					break;
+				case 'six':
+					urlLink = "https://6allmdrxlzswqtwyrsxf7zgtqe0eyksx.lambda-url.ca-central-1.on.aws";
+					break;
+				case 'random':
+					urlLink = "https://5wqnoydq7xgni3fx2t7ir732qm0tigdh.lambda-url.ca-central-1.on.aws";
+					break;
+			}
+			removal();
+			initializeDict();
+		}
 	});
 };

@@ -100,14 +100,11 @@ body {
 	height: 340px;
 	margin: 0 auto;
 	margin-top: 30px;
-	display: flex;
-	flex-wrap: wrap;
+	display: grid;
 	justify-content: center;
 }
 .wordbox {
 	border: 2px solid;
-	width: 70px;
-	height: 70px;
 	margin: 2px;
 	box-shadow: 0 2px 5px 2px #ccc;
 	border-radius: 20%;

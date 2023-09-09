@@ -51,8 +51,7 @@ header label:hover {
 }
 @media screen and (max-width: 600px) {
 	#shuffle-options {
-		width: 100%;
-		font-size: large;
+		font-size: 150%;
 	}
 }
 #dark,

@@ -48,11 +48,7 @@ header label:hover {
 	box-shadow: 0 4px 6px 5px #ccc;
 	width: 200%;
 	z-index: 1;
-}
-@media screen and (max-width: 600px) {
-	#shuffle-options {
-		font-size: 150%;
-	}
+	flex-direction: column;
 }
 #dark,
 #question,

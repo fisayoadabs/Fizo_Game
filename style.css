@@ -49,6 +49,12 @@ header label:hover {
 	width: 200%;
 	z-index: 1;
 }
+@media screen and (max-width: 600px) {
+	#shuffle-options {
+		width: 100%;
+		font-size: large;
+	}
+}
 #dark,
 #question,
 #exclaim {

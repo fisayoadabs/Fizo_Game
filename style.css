@@ -48,7 +48,7 @@ header label:hover {
 	box-shadow: 0 4px 6px 5px #ccc;
 	width: 200%;
 	z-index: 1;
-	flex-direction: column;
+	margin-top: 10px;
 }
 #dark,
 #question,

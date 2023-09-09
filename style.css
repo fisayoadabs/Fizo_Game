@@ -33,6 +33,7 @@ header label:hover {
 	font-size: x-large;
 	align-items: center;
 	border-radius: 30%;
+	cursor: pointer;
 }
 #shuffle-options {
 	display: none;
@@ -46,6 +47,7 @@ header label:hover {
 	padding: 5px;
 	box-shadow: 0 4px 6px 5px #ccc;
 	width: 200%;
+	z-index: 1;
 }
 #dark,
 #question,

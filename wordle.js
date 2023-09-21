@@ -429,26 +429,26 @@ window.onload = async () => {
 	menu_choice.addEventListener('click', (event) => {
 		if (event.target.tagName === 'LABEL') {
 			const option = event.target.id;
-			document.getElementById("four").classLiist.remove("highlight");
-			document.getElementById("five").classLiist.remove("highlight");
-			document.getElementById("six").classLiist.remove("highlight");
-			document.getElementById("random").classLiist.remove("highlight");
+			document.getElementById("four").classList.remove("highlight");
+			document.getElementById("five").classList.remove("highlight");
+			document.getElementById("six").classList.remove("highlight");
+			document.getElementById("random").classList.remove("highlight");
 			switch (option) {
 				case 'four':
 					urlLink = "https://o3bg27pv7q5kiqv62d53ff74ne0vitar.lambda-url.ca-central-1.on.aws";
-					document.getElementById("four").classLiist.add("highlight");
+					document.getElementById("four").classList.add("highlight");
 					break;
 				case 'five':
 					urlLink = "https://ms4wwf4ic4qbgwijmtbmhp34ia0ygcwa.lambda-url.ca-central-1.on.aws";
-					document.getElementById("five").classLiist.add("highlight");
+					document.getElementById("five").classList.add("highlight");
 					break;
 				case 'six':
 					urlLink = "https://6allmdrxlzswqtwyrsxf7zgtqe0eyksx.lambda-url.ca-central-1.on.aws";
-					document.getElementById("six").classLiist.add("highlight");
+					document.getElementById("six").classList.add("highlight");
 					break;
 				case 'random':
 					urlLink = "https://5wqnoydq7xgni3fx2t7ir732qm0tigdh.lambda-url.ca-central-1.on.aws";
-					document.getElementById("random").classLiist.add("highlight");
+					document.getElementById("random").classList.add("highlight");
 					break;
 			}
 			removal();

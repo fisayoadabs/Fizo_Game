@@ -429,26 +429,26 @@ window.onload = async () => {
 	menu_choice.addEventListener('click', (event) => {
 		if (event.target.tagName === 'LABEL') {
 			const option = event.target.id;
-			document.getElementById("four").style.color = "black";
-			document.getElementById("five").style.color = "black";
-			document.getElementById("six").style.color = "black";
-			document.getElementById("random").style.color = "black";
+			document.getElementById("four").remove("highlight");
+			document.getElementById("five").remove("highlight");
+			document.getElementById("six").remove("highlight");
+			document.getElementById("random").remove("highlight");
 			switch (option) {
 				case 'four':
 					urlLink = "https://o3bg27pv7q5kiqv62d53ff74ne0vitar.lambda-url.ca-central-1.on.aws";
-					document.getElementById("four").style.color = "red";
+					document.getElementById("four").add("highlight");
 					break;
 				case 'five':
 					urlLink = "https://ms4wwf4ic4qbgwijmtbmhp34ia0ygcwa.lambda-url.ca-central-1.on.aws";
-					document.getElementById("five").style.color = "red";
+					document.getElementById("five").add("highlight");
 					break;
 				case 'six':
 					urlLink = "https://6allmdrxlzswqtwyrsxf7zgtqe0eyksx.lambda-url.ca-central-1.on.aws";
-					document.getElementById("six").style.color = "red";
+					document.getElementById("six").add("highlight");
 					break;
 				case 'random':
 					urlLink = "https://5wqnoydq7xgni3fx2t7ir732qm0tigdh.lambda-url.ca-central-1.on.aws";
-					document.getElementById("random").style.color = "red";
+					document.getElementById("random").add("highlight");
 					break;
 			}
 			removal();

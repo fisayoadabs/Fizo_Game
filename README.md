@@ -1,6 +1,6 @@
-# Wordle_Game (https://fisayoadabs.github.io/Wordle_Game/)
+# Fizo_Game (https://fisayoadabs.github.io/Wordle_Game/)
 
-This repository contains the `HTML`, `CSS`, and `JavaScript` code for a word game called Wordle. The game is a guessing game where the user tries to guess a four-letter word in four attempts.
+This repository contains the `HTML`, `CSS`, and `JavaScript` code for a pseudo-version of wordle called Fizo. The game is a guessing game where the user tries to guess a four-letter word in four attempts.
 
 ## Contents
 - index.html: The HTML file that represents the structure of the Wordle game webpage.

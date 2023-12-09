@@ -27,3 +27,8 @@ To get started with the game, simply open the index.html file in a web browser.
 `AWS`
 - Using an AWS S3 bucket and terraform command I was able to create my own personal API.
 - August 2023
+
+## How To Play
+
+https://github.com/fisayoadabs/Fizo_Game/assets/116133322/c8c76062-25b5-41f4-8c34-6711de7043b0
+

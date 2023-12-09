@@ -32,3 +32,21 @@ To get started with the game, simply open the index.html file in a web browser.
 
 https://github.com/fisayoadabs/Fizo_Game/assets/116133322/c8c76062-25b5-41f4-8c34-6711de7043b0
 
+## Dark Mode
+
+https://github.com/fisayoadabs/Fizo_Game/assets/116133322/38e26523-6e94-42f9-8c25-1db6b4230b9d
+
+## Random Mode
+
+https://github.com/fisayoadabs/Fizo_Game/assets/116133322/11078d0d-97fd-47bc-84d1-2360bed2b573
+
+## When You Lose
+
+https://github.com/fisayoadabs/Fizo_Game/assets/116133322/ef08fb08-aa58-4b23-9301-7f63e3215747
+
+
+
+
+
+
+

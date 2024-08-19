@@ -11,7 +11,7 @@ var grabHint;
 
 var response;
 var dictionary;
-var urlLink = "https://o3bg27pv7q5kiqv62d53ff74ne0vitar.lambda-url.ca-central-1.on.aws";
+var urlLink = "https://fizogame.s3.ca-central-1.amazonaws.com/four-letter-wordbook.json";
 
 let flashingInterval;
 var box_on;
@@ -435,19 +435,23 @@ window.onload = async () => {
 			document.getElementById("random").classList.remove("highlight");
 			switch (option) {
 				case 'four':
-					urlLink = "https://o3bg27pv7q5kiqv62d53ff74ne0vitar.lambda-url.ca-central-1.on.aws";
+					urlLink = "https://fizogame.s3.ca-central-1.amazonaws.com/four-letter-wordbook.json";
+					// urlLink = "https://o3bg27pv7q5kiqv62d53ff74ne0vitar.lambda-url.ca-central-1.on.aws";
 					document.getElementById("four").classList.add("highlight");
 					break;
 				case 'five':
-					urlLink = "https://ms4wwf4ic4qbgwijmtbmhp34ia0ygcwa.lambda-url.ca-central-1.on.aws";
+					urlLink = "https://fizogame.s3.ca-central-1.amazonaws.com/five-letter-wordbook.json";
+					// urlLink = "https://ms4wwf4ic4qbgwijmtbmhp34ia0ygcwa.lambda-url.ca-central-1.on.aws";
 					document.getElementById("five").classList.add("highlight");
 					break;
 				case 'six':
-					urlLink = "https://6allmdrxlzswqtwyrsxf7zgtqe0eyksx.lambda-url.ca-central-1.on.aws";
+					urlLink = "https://fizogame.s3.ca-central-1.amazonaws.com/six-letter-wordbook.json";
+					// urlLink = "https://6allmdrxlzswqtwyrsxf7zgtqe0eyksx.lambda-url.ca-central-1.on.aws";
 					document.getElementById("six").classList.add("highlight");
 					break;
 				case 'random':
-					urlLink = "https://5wqnoydq7xgni3fx2t7ir732qm0tigdh.lambda-url.ca-central-1.on.aws";
+					urlLink = "https://fizogame.s3.ca-central-1.amazonaws.com/random-letter-wordbook.json";
+					// urlLink = "https://5wqnoydq7xgni3fx2t7ir732qm0tigdh.lambda-url.ca-central-1.on.aws";
 					document.getElementById("random").classList.add("highlight");
 					break;
 			}
